@@ -1290,6 +1290,13 @@ def vulnerability_scan(
         logger.info(final_nuclei_command)
 
         os.system(final_nuclei_command)
+        
+        #smuggler here!
+        smuggle_command = 'cat {} | python3 /usr/src/github/smuggler/smuggler.py -x -oj {}'.format(
+        vulnerability_scan_input_file, vulnerability_result_path)
+
+        os.system(smuggle_command)
+
         try:
             if os.path.isfile(vulnerability_result_path):
                 urls_json_result = open(vulnerability_result_path, 'r')

@@ -29,6 +29,13 @@ then
   git clone https://github.com/maurosoria/dirsearch /usr/src/github/dirsearch
 fi
 
+# clone smuggle
+if [ ! -d "/usr/src/github/smuggler" ]
+then
+  echo "Cloning smuggler"
+  git clone https://github.com/phor3nsic/smuggler /usr/src/github/smuggler
+fi
+
 python3 -m pip install -r /usr/src/github/dirsearch/requirements.txt
 
 # clone Sublist3r

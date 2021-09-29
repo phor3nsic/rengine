@@ -76,6 +76,7 @@ RUN GO111MODULE=on go get -u github.com/jaeles-project/gospider
 RUN GO111MODULE=on go get -u github.com/tomnomnom/gf
 RUN go get -v github.com/OWASP/Amass/v3/...
 RUN go get -u github.com/tomnomnom/gf
+RUN go get github.com/neex/http2smugl
 
 # Copy requirements
 COPY ./requirements.txt /tmp/requirements.txt

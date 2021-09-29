@@ -29,6 +29,8 @@ then
   git clone https://github.com/maurosoria/dirsearch /usr/src/github/dirsearch
 fi
 
+python3 -m pip install -r /usr/src/github/dirsearch/requirements.txt
+
 # clone smuggle
 if [ ! -d "/usr/src/github/smuggler" ]
 then
@@ -36,7 +38,12 @@ then
   git clone https://github.com/phor3nsic/smuggler /usr/src/github/smuggler
 fi
 
-python3 -m pip install -r /usr/src/github/dirsearch/requirements.txt
+# clone parsing http2smugl
+if [ ! -d "/usr/src/github/http2smugl_parsing" ]
+then
+  echo "Cloning http2smugl_parsing"
+  git clone https://github.com/phor3nsic/http2smugl_parsing /usr/src/github/http2smugl_parsing
+fi
 
 # clone Sublist3r
 if [ ! -d "/usr/src/github/Sublist3r" ]

@@ -1297,6 +1297,9 @@ def vulnerability_scan(
 
         os.system(smuggle_command)
 
+        http2smugl_command = 'http2smugl detect --targets {} --csv-log /tmp/log_http2_smuggle.csv && python3 /usr/src/github/http2smugl_parsing/parsing.py /tmp/log_http2_smuggle.csv >> {} && rm /tmp/log_http2_smuggle.csv'.format(vulnerability_scan_input_file,vulnerability_result_path)
+        os.system(http2smugl_command)
+
         try:
             if os.path.isfile(vulnerability_result_path):
                 urls_json_result = open(vulnerability_result_path, 'r')
